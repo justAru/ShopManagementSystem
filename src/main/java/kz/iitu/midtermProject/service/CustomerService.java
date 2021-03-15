@@ -54,6 +54,10 @@ public class CustomerService {
         System.out.println("Info changed successfully! " + customer.toString());
     }
 
+    public Customer getById(Long id){
+        return customerRepository.findCustomerById(id);
+    }
+
     public void createCustomer(){
         Customer customer = new Customer();
         System.out.println("First name: ");

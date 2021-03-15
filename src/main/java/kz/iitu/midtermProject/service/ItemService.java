@@ -120,6 +120,10 @@ public class ItemService {
         System.out.println("Changed successfully! " + item.toString());
     }
 
+    public Item getById(Long id){
+        return itemRepository.findItemById(id);
+    }
+
     public void listOfItems(){
         List<Item> items = itemRepository.findAll();
         System.out.println("**********************************");
