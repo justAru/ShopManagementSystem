@@ -5,9 +5,12 @@ import org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfig
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public interface ItemRepository extends JpaRepository<Item, Long> {
-    public Item findByName(String name);
-    public Item findItemById(Long id);
-
+    Item getById(Long id);
+    List<Item> getByNameContaining(String name);
+    List<Item> getAllByInfoContaining(String info);
+    List<Item> getAllByCustomerId(Long customerId);
 }
